@@ -1,7 +1,12 @@
 class CompetitorsController < ApplicationController
 
 	def index
-		@competitors = Competitor.includes(:clients).all
+		@user = User.find_by(id: session[:user_id])
+		unless @user
+			redirect_to login_url
+		else
+			@competitors = @user.competitors.includes(:clients)
+		end
 	end
 
 	def create
