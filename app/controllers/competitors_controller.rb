@@ -1,7 +1,7 @@
 class CompetitorsController < ApplicationController
 
 	def index
-		@competitors = Competitor.include(:clients).all
+		@competitors = Competitor.includes(:clients).all
 	end
 
 	def create
