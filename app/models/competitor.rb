@@ -19,7 +19,7 @@ class Competitor < ActiveRecord::Base
   def parse(page_content)
     nodes = page_content.xpath(client_xpath)
     if nodes
-      parsed_clients = nodes.map { |node| node.value }
+      parsed_clients = nodes.map { |node| node.text }
       update_clients(parsed_clients)
     end
   end
