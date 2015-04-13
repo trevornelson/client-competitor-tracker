@@ -40,6 +40,14 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
+  config.before(:each) do
+    response_body = '<div class=clients>Client 1</div><div class=clients>Client 2</div><div class=clients>Client 4</div><div class=clients>Client 5</div>'
+
+    stub_request(:any, /www.example.com/).
+      with(headers: {'Accept' => '*/*', 'User-Agent' => 'Ruby'}).
+      to_return(:body => response_body, :status => 200)
+  end
+
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
 =begin

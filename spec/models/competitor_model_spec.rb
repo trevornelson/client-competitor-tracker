@@ -5,13 +5,7 @@ WebMock.disable_net_connect!(allow_localhost: true)
 describe Competitor do
   describe "#fetch_clients method" do
     before(:all) do
-      response_body = '<div class=clients>Client 1</div><div class=clients>Client 2</div><div class=clients>Client 4</div><div class=clients>Client 5</div>'
-
-      stub_request(:get, "www.example.com/clients").
-        to_return(:body => response_body, :status => 200)
-
       @test_competitor = FactoryGirl.create(:competitor)
-
       for n in 1..4 do
         @test_competitor.clients.create(name: "Client #{n}")
       end
