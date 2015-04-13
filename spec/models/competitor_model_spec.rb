@@ -18,7 +18,7 @@ describe Competitor do
     end
 
     it "should return an ActiveRecord collection of client objects" do
-      expect(@test_competitor.fetch_clients.class).to eq('Client::ActiveRecord_Associations_CollectionProxy')
+      expect(@test_competitor.fetch_clients.class).to eq(Client::ActiveRecord_Associations_CollectionProxy)
     end
 
     it "should create a new client object for new clients added to page content" do

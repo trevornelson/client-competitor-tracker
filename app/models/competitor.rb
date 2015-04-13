@@ -3,6 +3,6 @@ class Competitor < ActiveRecord::Base
 	has_many :clients
 
   def fetch_clients
-    
+    clients
   end
 end
