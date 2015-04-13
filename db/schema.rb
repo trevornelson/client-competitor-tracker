@@ -16,15 +16,15 @@ ActiveRecord::Schema.define(version: 20150409133744) do
   create_table "clients", force: :cascade do |t|
     t.integer  "competitor_id"
     t.string   "name"
-    t.string   "client_url"
-    t.string   "client_xpath"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "competitors", force: :cascade do |t|
-    t.string   "name"
     t.integer  "user_id"
+    t.string   "name"
+    t.string   "client_url"
+    t.string   "client_xpath"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
