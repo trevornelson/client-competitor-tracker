@@ -11,8 +11,11 @@ describe Competitor do
       end
     end
 
-    it "should return an ActiveRecord collection of client objects" do
-      expect(@test_competitor.fetch_clients.class).to eq(Client::ActiveRecord_Associations_CollectionProxy)
+    it "should update a client record when a client is removed from page content" do
+      @test_competitor.fetch_clients
+      removed_client = @test_competitor.clients.find_by(name: 'Client 3')
+      # removed_client = @test_competitor.clients.find_by(dropped: true)
+      expect(removed_client.dropped).to eq(true) 
     end
 
     it "should create a new client object for new clients added to page content" do
@@ -21,10 +24,9 @@ describe Competitor do
       expect(added_client).to be_truthy
     end
 
-    it "should update a client record when a client is removed from page content" do
-      @test_competitor.fetch_clients
-      removed_client = Client.find_by(name: 'Client 3')
-      expect(removed_client.dropped).to be_truthy 
+    
+    it "should return an ActiveRecord collection of client objects" do
+      expect(@test_competitor.fetch_clients).to eq(Client::ActiveRecord_Associations_CollectionProxy)
     end
 
   end
