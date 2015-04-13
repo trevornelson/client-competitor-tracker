@@ -49,5 +49,7 @@ group :development, :test do
 
   # Webmock is used to Nokogiri functionality
   gem 'webmock'
+
+  gem 'factory_girl'
 end
 
