@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20150409133744) do
   create_table "clients", force: :cascade do |t|
     t.integer  "competitor_id"
     t.string   "name"
+    t.boolean  "dropped",       default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
