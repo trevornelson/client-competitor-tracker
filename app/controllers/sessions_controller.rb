@@ -5,14 +5,14 @@ class SessionsController < ApplicationController
 	end
 
 	def create
-		user = User.find_by(email: params[:session][:username])
-		if user && user.authenticate(params[:session][:password])
+		user = User.find_by(email: params[:email])
+		if user && user.authenticate(params[:password])
 			session.delete(:error)
 			session[:user_id] = user.id
 			redirect_to root_url
 		else
 			session[:error] = "invalid username and/or password"
-			redirect_to new_session_path
+			redirect_to login_path
 		end
 	end
 
