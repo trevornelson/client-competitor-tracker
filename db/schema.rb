@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20150409133744) do
 
   create_table "clients", force: :cascade do |t|
+    t.integer  "competitor_id"
     t.string   "name"
     t.string   "client_url"
     t.string   "client_xpath"
