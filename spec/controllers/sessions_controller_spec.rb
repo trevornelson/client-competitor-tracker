@@ -4,8 +4,8 @@ describe SessionsController do
 	describe "#new controller action" do
 
 		it "should render login page" do
-			get '/login'
-			expect(response).to be_ok
+			get :new
+			expect(response).to render_template(:new)
 		end
 
 	end
