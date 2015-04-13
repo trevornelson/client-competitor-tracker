@@ -6,15 +6,14 @@ class Competitor < ActiveRecord::Base
 
   def fetch_clients
     scrape
-    # clients
+    clients
   end
 
   private
 
   def scrape
     page_content = Nokogiri::HTML(open(client_url))
-    return parse(page_content)
-    # parse(page_content)
+    parse(page_content)
   end
 
   def parse(page_content)
@@ -23,16 +22,12 @@ class Competitor < ActiveRecord::Base
       parsed_clients = nodes.map { |node| node.text }
       update_clients(parsed_clients)
     end
-    return update_clients(parsed_clients)
   end
 
   def update_clients(parsed_clients)
-    testoutput = "initial"
-
     clients.each do |existing_client|
       unless parsed_clients.include?(existing_client.name)
         existing_client.update(dropped: true)
-        testoutput = existing_client
       end
     end
 
@@ -41,7 +36,6 @@ class Competitor < ActiveRecord::Base
         clients.create(name: parsed_client)
       end
     end
-
-    return testoutput
   end
+  
 end
