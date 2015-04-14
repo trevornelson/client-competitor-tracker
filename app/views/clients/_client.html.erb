@@ -5,6 +5,8 @@
 <% else %>
 <li class="list-group-item">
 <% end %>
-  <strong><%= client.name %></strong><br>
+  <div class="client-logo">
+    <img src=<%= client.name %>>
+  </div><br>
   <em><%= client.updated_at_to_s %></em>
 </li>

@@ -1,3 +1,9 @@
-#scrape-button {
-  
+.client-logo {
+  max-width: 100%;
+  max-height: 50%;
+}
+
+.client-logo > img {
+  max-width: 100%;
+  max-height: 100%;
 }
