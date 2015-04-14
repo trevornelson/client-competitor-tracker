@@ -1,6 +1,4 @@
 require 'rails_helper'
-require 'webmock/rspec'
-WebMock.disable_net_connect!(allow_localhost: true)
 
 describe Competitor do
   describe "#fetch_clients method" do
