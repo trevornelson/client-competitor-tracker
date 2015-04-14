@@ -1,14 +1,8 @@
 <div class="jumbotron">
   <div class="row">
     <div class="col-xs-4 col-xs-offset-4">
-      <h1>Login</h1>
-      <a href="/register">Create New User</a>
-      <% if session[:error_msg] %>
-        <div class="alert alert-danger" role="alert">
-          <strong><%= session[:error_msg] %></strong>
-        </div>
-      <% end %>
-      <form action="/sessions" method="post">
+      <h1>Create Account</h1>
+      <form action="/users" method="post">
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
           <input name="email" type="text" class="form-control" placeholder="Email">
@@ -18,6 +12,12 @@
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-key"></i></span>
           <input name="password" type="password" class="form-control" placeholder="Password">
+        </div>
+        <br>
+
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-key"></i></span>
+          <input name="password" type="password_confirm" class="form-control" placeholder="Confirm Password">
         </div>
         <br>
 
