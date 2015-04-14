@@ -25,7 +25,7 @@ class Competitor < ActiveRecord::Base
   end
 
   def retention_rate(dropped_clients, total_clients)
-    (dropped_clients.to_f / total_clients.to_f)
+    ((total_clients - dropped_clients).to_f / total_clients.to_f)
   end
 
   def scrape
