@@ -1,3 +1,51 @@
+body {
+  background-color: #9B59B6;
+}
+
+#wrapper {
+  margin: 15px 25px 15px 25px;
+}
+
+.panel {
+  background-color: #F2F1EF !important;
+}
+
+.btn {
+  background-color: #F2F1EF;
+  border: 2px solid #BF55EC;
+  color: #BF55EC;
+}
+
+#scrape-button {
+  background-color: #674172;
+  border: 2px solid #F2F1EF;
+  color: #F2F1EF;
+}
+
+h1 {
+  color: #F2F1EF;
+}
+
+h2, h3, h4, h5 {
+  color: #913D88;
+}
+
+.jumbotron h1 {
+  color: #913D88 !important;
+}
+
+input {
+  background-color: #F2F1EF !important;
+  border-color: #BE90D4 !important;
+  color: #BE90D4 !important;
+}
+
+.input-group-addon {
+  border-color: #BE90D4 !important;
+  color: #BE90D4;
+}
+
+
 .client-logo {
   max-width: 100%;
   max-height: 50%;

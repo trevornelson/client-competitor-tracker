@@ -2,7 +2,7 @@
   <h4><strong><%= competitor.name %></strong></h4>
   <% if competitor.clients.count > 0 %>
   <span>
-    <strong>Retention Rate: </strong>
+    <strong>Retention: </strong>
     <%= number_to_percentage(competitor.annual_retention_rate * 100, precision: 0) %>
   </span>
   <% end %>
