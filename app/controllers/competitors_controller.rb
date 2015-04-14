@@ -10,15 +10,15 @@ class CompetitorsController < ApplicationController
 	end
 
 	def create
-		competitor = Competitor.new(competitor_params)
-		session[:error] = competitor.errors.messages.first unless competitor.valid?
+		user = User.find(session[:user_id])
+		competitor = user.competitors.create(competitor_params)
 		redirect_to :back
 	end
 
 	private
 
 	def competitor_params
-		params.require(:competitor).permit(:name, :user_id)
+		params.permit(:name, :client_url, :client_xpath)
 	end
 
 end
