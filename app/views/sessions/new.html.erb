@@ -4,6 +4,9 @@
       <div class="col-xs-4 col-xs-offset-4">
         <h1>Login</h1>
         <a href="/register">Create New User</a>
+        <p>or use the demo account:</p>
+        <p>user: demo_user</p>
+        <p>pass: demo12345</p>
         <% if session[:error_msg] %>
           <div class="alert alert-danger" role="alert">
             <strong><%= session[:error_msg] %></strong>
